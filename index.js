@@ -5,7 +5,7 @@ const app = express();
 
 const usuarios = [];
 
-console.log(usuarios);
+//console.log(usuarios);
 
 app.get('/usuarios', (request, response) => {
     response.json({usuarios })
