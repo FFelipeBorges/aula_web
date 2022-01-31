@@ -3,17 +3,24 @@ const express = require("express");
 
 const app = express();
 
-const usuarios = {
-    nome: "Felipe",
-    sobrenome: "Borges",
-}
+const usuarios = [];
+
+console.log(usuarios);
+
+app.get('/usuarios', (request, response) => {
+    response.json({usuarios })
+})
 
 app.post('/usuarios', (request, response) => {
-    response.json({usuarios})
+    const usuario = {
+        nome: "Felipe",
+        sobrenome: "Borges",
+    }
+    usuarios.push(usuario);
+
+    response.json({ usuario });
 })
-app.get('/usuarios', (request, response) => {
-    response.json({usuarios: [] })
-})
+
 app.get('/produtos', (request, response) => {
     response.json({produtos: [] })
 })
